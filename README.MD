@@ -19,10 +19,10 @@ https://github.com/echer/25E4-infnet-validacao-de-modelos-de-inteligencia-artifi
 
 Para as questões a seguir, usaremos uma base de dados e faremos a análise exploratória dos dados, antes da clusterização.
 
-1. Escolha uma base de dados para realizar o trabalho. Essa base será usada em um problema de clusterização.
+1. Escolha uma base de dados para realizar o trabalho. Essa base será usada em um problema de clusterização.\
 Os dados foram disponibilizados na plataforma Kaggle sobre dados sócio-econômicos e de saúde que determinam o índice de desenvolvimento de um país. Esses dados estão disponibilizados através do link: https://www.kaggle.com/datasets/rohan0301/unsupervised-learning-on-country-data \
 ![Download do dataset](./assets/download-dataset.png)
-2. Escreva a justificativa para a escolha de dados, dando sua motivação e objetivos.
+2. Escreva a justificativa para a escolha de dados, dando sua motivação e objetivos.\
 A escolha do conjunto de dados sobre indicadores socioeconômicos de diferentes países foi motivada pela necessidade de compreender padrões globais de desenvolvimento e bem-estar utilizando variáveis quantitativas confiáveis. Esse tipo de informação é fundamental para análises comparativas, identificação de grupos semelhantes e suporte à tomada de decisão em políticas públicas, planejamento econômico e estudos internacionais.
 3. Mostre através de gráficos a faixa dinâmica das variáveis que serão usadas nas tarefas de clusterização. Analise os resultados mostrados. O que deve ser feito com os dados antes da etapa de clusterização?\
    1. Não há valores nulos no conjunto de dados\
