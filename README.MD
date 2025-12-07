@@ -48,21 +48,29 @@ A escolha do conjunto de dados sobre indicadores socioeconômicos de diferentes 
 Para os dados pré-processados da etapa anterior você irá:
 
 1. Realizar o agrupamento dos dados, escolhendo o número ótimo de clusters. Para tal, use o índice de silhueta e as técnicas:
-    1. K-Médias
-   ![Resultado kmeans silueta](./assets/kmeans-silueta.png)
-    2. DBScan
+    1. K-Médias\
+   ![Resultado kmeans silueta](./assets/kmeans-silueta.png)\
+    2. DBScan\
    ![Resultado dbscan silueta](./assets/dbscan-silueta.png)
 2. Com os resultados em mão, descreva o processo de mensuração do índice de silhueta. Mostre o gráfico e justifique o número de clusters escolhidos.
-   ![Resultado kmeans silueta plot](./assets/kmeans-silueta-plot.png)\
+   ![Resultado kmeans silueta plot](./assets/kmeans-silueta-plot.png)
    1. KMEANS - No caso do kmeans o processo utilizado na mensuração do indice de silhueta foi feita utilizando um range de 2 a 10 clusters e para cada cluster executamos o kmeans nos nossos dados e obtendo para cada caso o silhuete score. O número de clusters escolhidos para o kmeans foi 2 baseado no indice de silhueta = 0.42, olhando apenas para este indice temos o maior e melhor valor utilizando o cluster = 2.\
    ![Resultado kmeans best cluster](./assets/kmeans-best-cluster.png)\
-   2. DBSCAN - No caso do dbscan o processo utilizado na mensuração do indice de silhueta foi feita utilizando os valores de eps calculados préviamente em um range de 0.1 a 1.0. No caso do dbscan foi realizado um teste considerando 18 vizinhos que gerou o eps de 0.3 gerou 2 clusters e apenas com esse caso obteve um resultado de silhueta de 0.22.
-   ![Resultado dbscan silueta](./assets/dbscan-silueta.png)
+   2. DBSCAN - No caso do dbscan o processo utilizado na mensuração do indice de silhueta foi feita utilizando os valores de eps calculados préviamente em um range de 0.1 a 1.0. No caso do dbscan foi realizado um teste considerando 18 vizinhos que gerou o eps de 0.3 gerou 2 clusters e apenas com esse caso obteve um resultado de silhueta de 0.22. Foi testado também a quantidade de 5 vizinhos porém o resultado foi ainda pior, a quantidade 18 vizinhos foi utilizada considerando que quando temos o min_sample > 0 devemos utilizar: 2 x d, onde d são as dimensões ou features, no nosso caso temos 9 features.\
+   ![Resultado dbscan silueta](./assets/dbscan-silueta.png)\
    ![Resultado dbscan eps](./assets/dbscan-silueta-plot.png)
-3. Compare os dois resultados, aponte as semelhanças e diferenças e interprete.
-4. Escolha mais duas medidas de validação para comparar com o índice de silhueta e analise os resultados encontrados. Observe, para a escolha, medidas adequadas aos algoritmos.
-5. Realizando a análise, responda: A silhueta é um o índice indicado para escolher o número de clusters para o algoritmo de DBScan?
-
+3. Compare os dois resultados, aponte as semelhanças e diferenças e interprete.\
+   Ambos KMEANS e DBSCAN obtiveram 2 clusters como resultado apesar do DBSCAN conseguir obter apenas em uma única ocorrencia o resultado de 2 clusters e não haver outras ocorrencias. O Kmeans de fato consegue obter uma melhor separação dos clusters e clusters mais coesos, enquanto o dbscan, nesse caso, obteve clusters pouco separados com estrutura mais fracas pois o dataset não possui uma densidade bem marcante o que prejudicou bastante o algoritmo dbscan, com os valores baixos de eps quase todos os pontos viram ruido funcionando apenas no caso 0.3 eps.
+4. Escolha mais duas medidas de validação para comparar com o índice de silhueta e analise os resultados encontrados. Observe, para a escolha, medidas adequadas aos algoritmos.\
+   Vamos utilizar nesse caso o Davies–Bouldin Index (DBI) e o Calinski–Harabasz Index (CHI)
+   1. KMEANS
+   ![Novas metricas kmeans](./assets/new-metrics-kmeans.png)
+   No caso do kmeans podemos observar que os outros dois indices adicionados DBI e CHI confirmam de fato que a utilização de clusters = 2 é de fato o melhor cenário olhando agora os 3 indices juntos Silhuete, DBI e CHI, onde o silhuete maior temos cluster = 2, no calinski temos também cluster = 2 no maior valor e no dbi também temos o ponto em cluster = 2 no menor valor do indice.
+   2. DBSCAN
+   ![Novas metricas dbscan](./assets/new-metrics-dbscan.png)
+    No caso do dbscan só conseguimos apenas 1 resultado pois temos apenas o ponto de eps 0.3 gerando 2 clusters o que impactou a geração dos outros indices, no caso mantivemos o mesmo resultado anterior pois não obtivemos outras vias de comparação
+5. Realizando a análise, responda: A silhueta é um o índice indicado para escolher o número de clusters para o algoritmo de DBScan?\
+    O índice de Silhueta não é o indicador mais adequado para escolher o número de clusters no DBSCAN, pois esse algoritmo gera clusters de formas arbitrárias, possui ruídos e trabalha com densidade. A silhueta implica em clusters compactos e bem separados, o que raramente ocorre no DBSCAN. Assim, sua interpretação se torna instável e pode levar a conclusões erradas. 
 
 ## Parte 4 - Medidas de similaridade
 
