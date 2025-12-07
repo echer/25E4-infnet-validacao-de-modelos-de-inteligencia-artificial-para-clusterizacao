@@ -49,8 +49,16 @@ Para os dados pré-processados da etapa anterior você irá:
 
 1. Realizar o agrupamento dos dados, escolhendo o número ótimo de clusters. Para tal, use o índice de silhueta e as técnicas:
     1. K-Médias
+   ![Resultado kmeans silueta](./assets/kmeans-silueta.png)
     2. DBScan
+   ![Resultado dbscan silueta](./assets/dbscan-silueta.png)
 2. Com os resultados em mão, descreva o processo de mensuração do índice de silhueta. Mostre o gráfico e justifique o número de clusters escolhidos.
+   ![Resultado kmeans silueta plot](./assets/kmeans-silueta-plot.png)\
+   1. KMEANS - No caso do kmeans o processo utilizado na mensuração do indice de silhueta foi feita utilizando um range de 2 a 10 clusters e para cada cluster executamos o kmeans nos nossos dados e obtendo para cada caso o silhuete score. O número de clusters escolhidos para o kmeans foi 2 baseado no indice de silhueta = 0.42, olhando apenas para este indice temos o maior e melhor valor utilizando o cluster = 2.\
+   ![Resultado kmeans best cluster](./assets/kmeans-best-cluster.png)\
+   2. DBSCAN - No caso do dbscan o processo utilizado na mensuração do indice de silhueta foi feita utilizando os valores de eps calculados préviamente em um range de 0.1 a 1.0. No caso do dbscan foi realizado um teste considerando 18 vizinhos que gerou o eps de 0.3 gerou 2 clusters e apenas com esse caso obteve um resultado de silhueta de 0.22.
+   ![Resultado dbscan silueta](./assets/dbscan-silueta.png)
+   ![Resultado dbscan eps](./assets/dbscan-silueta-plot.png)
 3. Compare os dois resultados, aponte as semelhanças e diferenças e interprete.
 4. Escolha mais duas medidas de validação para comparar com o índice de silhueta e analise os resultados encontrados. Observe, para a escolha, medidas adequadas aos algoritmos.
 5. Realizando a análise, responda: A silhueta é um o índice indicado para escolher o número de clusters para o algoritmo de DBScan?
