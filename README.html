@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Parte 1 - Infraestrutura</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h2 id="parte-1---infraestrutura">Parte 1 - Infraestrutura</h2>
+<p>Para as questões a seguir, você deverá executar códigos em um notebook Jupyter, rodando em ambiente local, certifique-se que:</p>
+<ol>
+<li>Você está rodando em Python 3.9+<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\python-version.png" alt="Python 3.9"></li>
+<li>Você está usando um ambiente virtual: Virtualenv ou Anaconda<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\anaconda-virtual-env.png" alt="Anaconda Env"></li>
+<li>Todas as bibliotecas usadas nesse exercícios estão instaladas em um ambiente virtual específico<br>
+anaconda - py39</li>
+<li>Gere um arquivo de requerimentos (requirements.txt) com os pacotes necessários. É necessário se certificar que a versão do pacote está disponibilizada.<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\requirements.png" alt="Requirements.txt"></li>
+<li>Tire um printscreen do ambiente que será usado rodando em sua máquina.<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\ambiente-local.png" alt="Ambiente Local"></li>
+<li>Disponibilize os códigos gerados, assim como os artefatos acessórios (requirements.txt) e instruções em um repositório GIT público. (se isso não for feito, o diretório com esses arquivos deverá ser enviado compactado no moodle).<br>
+<a href="https://github.com/echer/25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao.git">https://github.com/echer/25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao.git</a></li>
+</ol>
+<h2 id="parte-2---escolha-de-base-de-dados">Parte 2 - Escolha de base de dados</h2>
+<p>Para as questões a seguir, usaremos uma base de dados e faremos a análise exploratória dos dados, antes da clusterização.</p>
+<ol>
+<li>Escolha uma base de dados para realizar o trabalho. Essa base será usada em um problema de clusterização.<br>
+Os dados foram disponibilizados na plataforma Kaggle sobre dados sócio-econômicos e de saúde que determinam o índice de desenvolvimento de um país. Esses dados estão disponibilizados através do link: <a href="https://www.kaggle.com/datasets/rohan0301/unsupervised-learning-on-country-data">https://www.kaggle.com/datasets/rohan0301/unsupervised-learning-on-country-data</a> <br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\download-dataset.png" alt="Download do dataset"></li>
+<li>Escreva a justificativa para a escolha de dados, dando sua motivação e objetivos.<br>
+A escolha do conjunto de dados sobre indicadores socioeconômicos de diferentes países foi motivada pela necessidade de compreender padrões globais de desenvolvimento e bem-estar utilizando variáveis quantitativas confiáveis. Esse tipo de informação é fundamental para análises comparativas, identificação de grupos semelhantes e suporte à tomada de decisão em políticas públicas, planejamento econômico e estudos internacionais.</li>
+<li>Mostre através de gráficos a faixa dinâmica das variáveis que serão usadas nas tarefas de clusterização. Analise os resultados mostrados. O que deve ser feito com os dados antes da etapa de clusterização?
+<ol>
+<li>Não há valores nulos no conjunto de dados</li>
+<li>Tem 167 países no total</li>
+<li>Todas as variáveis são numéricas, exceto a coluna 'country'.</li>
+<li>Foi observado grandes diferenças nas escalas, os dados possuem variação alta, presença de outliers e diferença de escala entre variáveis.<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\data-analysis.png" alt="Data analysis"><br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\data-distribution.png" alt="Distribuição e faixa dinamica de variáveis"><br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\data-feature-distribution.png" alt="Distribuição das variáveis"></li>
+</ol>
+</li>
+<li>Realize o pré-processamento adequado dos dados. Descreva os passos necessários.
+<ol>
+<li>Remocao das colunas nao númericas.<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\remocao-coluna-nao-numerica.png" alt="Remocao coluna nao numericas do dataset"></li>
+<li>Tratamento de outliers aplicando logaritmos com tratamento para valores negativos.<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\tratamento-outliers.png" alt="Aplicação de logaritmos nos outliers tratando quando sao negativos"></li>
+<li>Redução da escala de valores para melhorar o resultado na aplicação dos modelos de clusterização.<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\data-scale-reduction.png" alt="Redução da escala numérica dos dados"></li>
+<li>Resultados obtidos em comparação com os valores iniciais com a redução da escala.<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\resultados-variaveis.png" alt="Resultados obtidos"><br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\resultados-distribuicao.png" alt="Resultados obtidos"></li>
+</ol>
+</li>
+</ol>
+<h2 id="parte-3---clusterização">Parte 3 - Clusterização</h2>
+<p>Para os dados pré-processados da etapa anterior você irá:</p>
+<ol>
+<li>
+<p>Realizar o agrupamento dos dados, escolhendo o número ótimo de clusters. Para tal, use o índice de silhueta e as técnicas:</p>
+<ol>
+<li>K-Médias<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\kmeans-silueta.png" alt="Resultado kmeans silueta">\</li>
+<li>DBScan<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\dbscan-silueta.png" alt="Resultado dbscan silueta">\</li>
+</ol>
+</li>
+<li>
+<p>Com os resultados em mão, descreva o processo de mensuração do índice de silhueta. Mostre o gráfico e justifique o número de clusters escolhidos.<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\kmeans-silueta-plot.png" alt="Resultado kmeans silueta plot">\</p>
+<ol>
+<li>KMEANS - No caso do kmeans o processo utilizado na mensuração do indice de silhueta foi feita utilizando um range de 2 a 10 clusters e para cada cluster executamos o kmeans nos nossos dados e obtendo para cada caso o silhuete score. O número de clusters escolhidos para o kmeans foi 2 baseado no indice de silhueta = 0.42, olhando apenas para este indice temos o maior e melhor valor utilizando o cluster = 2.<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\kmeans-best-cluster.png" alt="Resultado kmeans best cluster">\</li>
+<li>DBSCAN - No caso do dbscan o processo utilizado na mensuração do indice de silhueta foi feita utilizando os valores de eps calculados préviamente em um range de 0.1 a 1.0. No caso do dbscan foi realizado um teste considerando 18 vizinhos que gerou o eps de 0.3 gerou 2 clusters e apenas com esse caso obteve um resultado de silhueta de 0.22. Foi testado também a quantidade de 5 vizinhos porém o resultado foi ainda pior, a quantidade 18 vizinhos foi utilizada considerando que quando temos o min_sample &gt; 0 devemos utilizar: 2 x d, onde d são as dimensões ou features, no nosso caso temos 9 features.<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\dbscan-silueta.png" alt="Resultado dbscan silueta"><br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\dbscan-silueta-plot.png" alt="Resultado dbscan eps">\</li>
+</ol>
+</li>
+<li>
+<p>Compare os dois resultados, aponte as semelhanças e diferenças e interprete.<br>
+Ambos KMEANS e DBSCAN obtiveram 2 clusters como resultado apesar do DBSCAN conseguir obter apenas em uma única ocorrencia o resultado de 2 clusters e não haver outras ocorrencias. O Kmeans de fato consegue obter uma melhor separação dos clusters e clusters mais coesos, enquanto o dbscan, nesse caso, obteve clusters pouco separados com estrutura mais fracas pois o dataset não possui uma densidade bem marcante o que prejudicou bastante o algoritmo dbscan, com os valores baixos de eps quase todos os pontos viram ruido funcionando apenas no caso 0.3 eps.</p>
+</li>
+<li>
+<p>Escolha mais duas medidas de validação para comparar com o índice de silhueta e analise os resultados encontrados. Observe, para a escolha, medidas adequadas aos algoritmos.<br>
+Vamos utilizar nesse caso o Davies–Bouldin Index (DBI) e o Calinski–Harabasz Index (CHI)</p>
+<ol>
+<li>KMEANS<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\new-metrics-kmeans.png" alt="Novas metricas kmeans"><br>
+No caso do kmeans podemos observar que os outros dois indices adicionados DBI e CHI confirmam de fato que a utilização de clusters = 2 é de fato o melhor cenário olhando agora os 3 indices juntos Silhuete, DBI e CHI, onde o silhuete maior temos cluster = 2, no calinski temos também cluster = 2 no maior valor e no dbi também temos o ponto em cluster = 2 no menor valor do indice.</li>
+<li>DBSCAN<br>
+<img src="file:///c:\Users\alan echer\Documents\25E4-infnet-validacao-de-modelos-de-inteligencia-artificial-para-clusterizacao\assets\new-metrics-dbscan.png" alt="Novas metricas dbscan"><br>
+No caso do dbscan só conseguimos apenas 1 resultado pois temos apenas o ponto de eps 0.3 gerando 2 clusters o que impactou a geração dos outros indices, no caso mantivemos o mesmo resultado anterior pois não obtivemos outras vias de comparação.</li>
+</ol>
+</li>
+<li>
+<p>Realizando a análise, responda: A silhueta é um o índice indicado para escolher o número de clusters para o algoritmo de DBScan?</p>
+<p>O índice de Silhueta não é o indicador mais adequado para escolher o número de clusters no DBSCAN, pois esse algoritmo gera clusters de formas arbitrárias, possui ruídos e trabalha com densidade. A silhueta implica em clusters compactos e bem separados, o que raramente ocorre no DBSCAN. Assim, sua interpretação se torna instável e pode levar a conclusões erradas.</p>
+</li>
+</ol>
+<h2 id="parte-4---medidas-de-similaridade">Parte 4 - Medidas de similaridade</h2>
+<ol>
+<li>
+<p>Um determinado problema, apresenta 10 séries temporais distintas. Gostaríamos de agrupá-las em 3 grupos, de acordo com um critério de similaridade, baseado no valor máximo de correlação cruzada entre elas. Descreva em tópicos todos os passos necessários.</p>
+<p>O primeiro passo é a preparação das séries temporais para garantir que todas possuem o mesmo tamanho, frequencia e não tenham valores inconsistentes, nesse momento podemos fazer normalizações e ajustes nos dados principalmente para que diferenças de escalas prejudiquem a comparação entre séries.</p>
+<p>O próximo passo seria calcular a correlação cruzada entre cada par de séries e para cada um identificamos o maior valor de similaridade que representa o quanto são sincronizadas em algum momento.</p>
+<p>O próximo passo é construir uma matriz que mostra o grau de semelhança entre as séries e aplicar algoritmo de agrupamento, depois essa matriz pode ser convertida para uma matriz de distancias, que já é padrão para muitos métodos de entrada. A partir dessa matriz de distancias escolhemos um algoritmo como k-medoids ou clusterização hierarquica, o algoritmo então divide as 10 séries em 3 grupos.</p>
+<p>O próximo passo após a formação dos grupos, é fazer uma avaliação dos clusters, verificando se as séries dentro de cada grupo realmente apresentam comportamento parecido. Podemos criar visualizações, como mapas de calor ou gráficos das séries coloridas por grupo, para ajudar a interpretar os resultados. Por fim, devemos documentar toda a análise, para garantir transparência, reprodutibilidade e uma compreensão clara de como os grupos foram formados com base na similaridade entre as séries temporais.</p>
+</li>
+<li>
+<p>Para o problema da questão anterior, indique qual algoritmo de clusterização você usaria. Justifique.</p>
+<p>No caso do problema da questão anterior poderia ser utilizado o k-medoids pois além de utilizar um elemento real do conjunto de dados, essa abordagem é muito mais robusta e apropriada para situações em que a distância entre os elementos não é euclidiana, ele é bem robusto em relação a outliers e métricas não convencionais, por esse motivo é uma boa escolha para séries temporais baseadas em similaridade.</p>
+</li>
+<li>
+<p>Indique um caso de uso para essa solução projetada.</p>
+<p>Um caso de uso para utilização dessa solução poderia ser aplicada a ambientes industriais, para análise de comportamento de sensores em sistemas industriais como uma forma de manutenção preventiva.</p>
+</li>
+<li>
+<p>Sugira outra estratégia para medir a similaridade entre séries temporais. Descreva em tópicos os passos necessários.</p>
+<p>Uma alternativa importante para medir similaridade entre séries temporais é a técnica DTW - Dynamic Time Warping, que permite comparar séries mesmo quando elas apresentam desalinhamentos no tempo ou variações de velocidade. O processo consiste em preparar as séries, limpar e normalizá-las, calcular a distância DTW entre cada par, obtendo o custo mínimo de alinhamento, depois construimos uma matriz completa de distâncias e aplicamos algoritmos de clusterização compatíveis com esse tipo de métrica, como k-medoids ou métodos hierárquicos. Após a clusterização, os grupos são avaliados e visualizados para verificar se as séries em cada cluster realmente compartilham padrões temporais semelhantes.</p>
+</li>
+</ol>
+<h2 id="abaixo-o-codigo-do-notebook-executado-na-integra">Abaixo o codigo do notebook executado na integra:</h2>
+
+            
+            
+        </body>
+        </html>
