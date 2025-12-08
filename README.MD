@@ -75,8 +75,20 @@ Para os dados pré-processados da etapa anterior você irá:
 ## Parte 4 - Medidas de similaridade
 
 1. Um determinado problema, apresenta 10 séries temporais distintas. Gostaríamos de agrupá-las em 3 grupos, de acordo com um critério de similaridade, baseado no valor máximo de correlação cruzada entre elas. Descreva em tópicos todos os passos necessários.
+    O primeiro passo é a preparação das séries temporais para garantir que todas possuem o mesmo tamanho, frequencia e não tenham valores inconsistentes, nesse momento podemos fazer normalizações e ajustes nos dados principalmente para que diferenças de escalas prejudiquem a comparação entre séries.
+
+    O próximo passo seria calcular a correlação cruzada entre cada par de séries e para cada um identificamos o maior valor de similaridade que representa o quanto são sincronizadas em algum momento.
+
+    O próximo passo é construir uma matriz que mostra o grau de semelhança entre as séries e aplicar algoritmo de agrupamento, depois essa matriz pode ser convertida para uma matriz de distancias, que já é padrão para muitos métodos de entrada. A partir dessa matriz de distancias escolhemos um algoritmo como k-medoids ou clusterização hierarquica, o algoritmo então divide as 10 séries em 3 grupos.
+
+    O próximo passo após a formação dos grupos, é fazer uma avaliação dos clusters, verificando se as séries dentro de cada grupo realmente apresentam comportamento parecido. Podemos criar visualizações, como mapas de calor ou gráficos das séries coloridas por grupo, para ajudar a interpretar os resultados. Por fim, devemos documentar toda a análise, para garantir transparência, reprodutibilidade e uma compreensão clara de como os grupos foram formados com base na similaridade entre as séries temporais.
+
 2. Para o problema da questão anterior, indique qual algoritmo de clusterização você usaria. Justifique.
+    
+   
 3. Indique um caso de uso para essa solução projetada.
+   
 4. Sugira outra estratégia para medir a similaridade entre séries temporais. Descreva em tópicos os passos necessários.
+   
 
 ## Abaixo o codigo do notebook executado na integra:
